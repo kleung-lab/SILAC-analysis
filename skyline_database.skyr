@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<views>
+  <view name="R_database" rowsource="pwiz.Skyline.Model.Databinding.Entities.Precursor" sublist="Results!*">
+    <column name="Peptide.Protein.Accession" />
+    <column name="Peptide.Protein.PreferredName" />
+    <column name="Peptide.Protein.Gene" />
+    <column name="Peptide.Sequence" />
+    <column name="Peptide.ModifiedSequence" />
+    <column name="Mz" total="PivotValue" />
+    <column name="Charge" />
+    <column name="Peptide.MissedCleavages" />
+    <column name="Results!*.Value.PeptideResult.PeptideRetentionTime" />
+    <column name="Results!*.Value.PeptideResult.ResultFile.FileName" />
+    <column name="Results!*.Value.TotalAreaMs1" total="PivotValue" />
+    <column name="Results!*.Value.IsotopeDotProduct" total="PivotValue" />
+    <column name="IsotopeLabelType" hidden="true" total="PivotKey" />
+    <column name="Peptide" hidden="true" />
+  </view>
+</views>
