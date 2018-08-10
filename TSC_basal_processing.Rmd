@@ -1,0 +1,90 @@
+---
+title: "TSC_processing"
+output:
+  html_document:
+    fig_height: 6
+    fig_width: 6
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+  html_notebook: default
+---
+## document set up
+This is the surface proteomics data analysis for TSC project with Mike Evans group
+Charles Trulliet, Loc Huynh, and Junnian Wei
+```{r setup}
+knitr::opts_knit$set(root.dir = "~/Box Sync/MS/MSpeaklist/TSC_v2/")
+knitr::opts_chunk$set(
+    echo = FALSE,
+    message = FALSE,
+    warning = FALSE,
+    fig.align='center',
+    fig.pos='H',
+    fig.path = "TSC.proc.plots/",
+    dev = c("png", "pdf"),
+    dpi=500
+)
+```
+
+
+```{r OR 0.8}
+source("~/Box Sync/MS/MSpeaklist/codes/SILAC_v1.R")
+# calRatio3("~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/data/", "~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/parameter_TSC.csv", "TSC")
+# # save.image("~/Box Sync/MS/MSpeaklist/TSC_v2/TSC_basal_data_8.RData")
+# 
+# HLpro(skypep[skypep$fil == T,])
+# 
+# plot(skypep[skypep$fil ==T, "heavy.Isotope.Dot.Product"], (skypep[skypep$fil ==T, "heavy.Total.Area"]), log = "y")
+# 
+
+
+```
+
+
+
+```{r contour test}
+# skypep.sub <- skypep[grepl("Q20160916-02.raw", skypep$File.Name), ]
+# skypep.sub[[12]] <- as.numeric(skypep.sub[[12]])
+# skypep.sub[[11]] <- log(as.numeric(skypep.sub[[11]]), 10)
+# smoothScatter(skypep.sub[[11]], skypep.sub[[12]], colramp = colorRampPalette(c("white", "blue","red")))
+# 
+# sk <- ggplot(skypep.sub, aes(heavy.Total.Area,heavy.Isotope.Dot.Product)) + geom_point()
+# sk + stat_density2d(aes())
+```
+```{r OR 0.9 }
+# calRatio3("~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/data/", "~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/parameter_TSC_2.csv", "TSC")
+# save.image("~/Box Sync/MS/MSpeaklist/TSC_v2/TSC_basal_data_9.RData")
+# 
+# HLpro(skypep[skypep$fil == T,])
+# 
+# plot(skypep[skypep$fil ==T, "heavy.Isotope.Dot.Product"], (skypep[skypep$fil ==T, "heavy.Total.Area"]), log = "y")
+```
+
+```{r AND 0.8}
+# calRatio3("~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/data/", "~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/parameter_TSC_AND.csv", "TSC")
+# # save.image("~/Box Sync/MS/MSpeaklist/TSC_v2/TSC_basal_data_AND.RData")
+# 
+# HLpro(skypep[skypep$fil == T,])
+# 
+# plot(skypep[skypep$fil ==T, "heavy.Isotope.Dot.Product"], (skypep[skypep$fil ==T, "heavy.Total.Area"]), log = "y")
+```
+
+```{r proc2 AND 0.8}
+calRatio3("~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/data_proc2/", "~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/parameter_TSC_AND.csv", "TSC")
+# save.image("~/Box Sync/MS/MSpeaklist/TSC_v2/TSC_basal_data_AND_proc2_v2.RData")
+
+HLpro(skypep[skypep$fil == T,])
+
+plot(skypep[skypep$fil ==T, "heavy.Isotope.Dot.Product"], (skypep[skypep$fil ==T, "heavy.Total.Area"]), log = "y")
+Volplot(skypro, customlab = "custom", custom = c("Anpep", "Mme", "Tfrc"))
+```
+```{r proc2 OR 0.8}
+calRatio3("~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/data_proc2/", "~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/parameter_TSC_OR_8.csv", "TSC")
+# save.image("~/Box Sync/MS/MSpeaklist/TSC_v2/TSC_basal_data_OR_8_proc2_v2.RData")
+```
+```{r original data}
+calRatio3("~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/data/", "~/Box Sync/MS/MSpeaklist/TSC_v2/skyline/parameter_TSC_AND.csv", "TSC")
+# save.image("~/Box Sync/MS/MSpeaklist/TSC_v2/TSC_basal_data_AND_8_original.RData")
+
+```
+
