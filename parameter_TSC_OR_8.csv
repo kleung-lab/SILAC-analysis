@@ -1,0 +1,5 @@
+raw,exp_name,used,fraction,exp_label,exp_ref,cell,user,project,dotp,dotp.fil,center,sd,peptides
+Q20160916-02.raw,TSC1H-PNG,T,PNG,H,TSC1,TSC1,kleung,TSC,0.8,OR,T,F,0
+Q20160916-04.raw,TSC1L-PNG,T,PNG,L,TSC1,TSC1,kleung,TSC,0.8,OR,T,F,0
+Q20160916-06.raw,TSC2H-PNG,T,PNG,H,TSC2,TSC2,kleung,TSC,0.8,OR,T,F,0
+Q20160916-08.raw,TSC2L-PNG,T,PNG,L,TSC2,TSC2,kleung,TSC,0.8,OR,T,F,0
