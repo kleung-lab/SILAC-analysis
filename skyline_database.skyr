@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+
 <views>
   <view name="R_database" rowsource="pwiz.Skyline.Model.Databinding.Entities.Precursor" sublist="Results!*">
     <column name="Peptide.Protein.Accession" />
