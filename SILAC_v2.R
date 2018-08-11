@@ -1,6 +1,6 @@
 # script to calculate log2 ratios and p values from skyline export
 # July 7,2017 Kevin Leung
-# August 9, 2018 updated
+# August 9, 2018 updated 
 # merged Cal_ratio, volplot, and box_temp scripts into one script
 # Functions: calRatio3, log2dist, and volplot, HLpep, HLpro
 # Dependancies - ggplot2, reshape2, ggrepel
