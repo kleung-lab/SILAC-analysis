@@ -1,4 +1,5 @@
 # SILACanalysis
+test branch for analysing TSC dataset
 To process and analyze SILAC data generated from Skyline export. Used in following manuscripts - 
 
 Chen, W., Mou, K. Y., Solomon, P., Aggarwal, R., Leung, K. K., & Wells, J. A. (2021). Large remodeling of the Myc-induced cell surface proteome in B cells and prostate cells creates new opportunities for immunotherapy. Proceedings of the National Academy of Sciences of the United States of America, 118(4), 1–11.  10.1073/pnas.2018861118
