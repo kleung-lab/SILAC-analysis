@@ -1,3 +1,15 @@
+# SILACanalysis
+To process and analyze SILAC data generated from Skyline export. Used in following manuscripts - 
+
+Chen, W., Mou, K. Y., Solomon, P., Aggarwal, R., Leung, K. K., & Wells, J. A. (2021). Large remodeling of the Myc-induced cell surface proteome in B cells and prostate cells creates new opportunities for immunotherapy. Proceedings of the National Academy of Sciences of the United States of America, 118(4), 1–11.  10.1073/pnas.2018861118
+
+Leung, K. K., Wilson, G. M., Kirkemo, L. L., Riley, N. M., Coon, J. J., & Wells, J. A. (2020). Broad and thematic remodeling of the surfaceome and glycoproteome on isogenic cells transformed with driving proliferative oncogenes. Proceedings of the National Academy of Sciences of the United States of America, 117 (14), 7764–7775. https://doi.org/10.1073/pnas.1917947117
+
+Wei, J., Leung, K., Truillet, C., Ruggero, D., Wells, J. A., & Evans, M. J. (2020). Profiling the Surfaceome Identifies Therapeutic Targets for Cells with Hyperactive mTORC1 Signaling. Molecular & Cellular Proteomics : MCP, 19 (2), 294–307. https://doi.org/10.1074/mcp.RA119.001785
+
+Leung KK, Nguyen A, Shi T, Tang L, Ni X, Escoubet L, MacBeth KJ, DiMartino J, Wells JA. Multiomics of azacitidine-treated AML cells reveals variable and convergent targets that remodel the cell-surface proteome.  Proc Natl Acad Sci U S A. 2019 Jan 8;116(2):695-700. doi: 10.1073/pnas.1813666116. Epub 2018 Dec 24. 10.1073/pnas.1813666116
+
+# General instructions
 General steps for processing skyline data using the skyline_database.skyr
 1. process data using CalRatio function, (need skyline export file, parameter file, SILAC_v2.R file)
 2. save data so you are not re-processing data each time
