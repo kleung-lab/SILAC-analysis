@@ -1,6 +1,8 @@
 # SILACanalysis
 To process and analyze SILAC data generated from Skyline export. Used in following manuscripts - 
 
+Byrnes, J. R., Weeks, A. M., Shifrut, E., Carnevale, J., Kirkemo, L., Ashworth, A., Marson, A., Wells, J.A. Hypoxia is a dominant remodeler of the CD8+ T cell surface proteome relative to activation and regulatory T cell-mediated suppression. Draft.
+
 Chen, W., Mou, K. Y., Solomon, P., Aggarwal, R., Leung, K. K., & Wells, J. A. (2021). Large remodeling of the Myc-induced cell surface proteome in B cells and prostate cells creates new opportunities for immunotherapy. Proceedings of the National Academy of Sciences of the United States of America, 118(4), 1–11.  10.1073/pnas.2018861118
 
 Leung, K. K., Wilson, G. M., Kirkemo, L. L., Riley, N. M., Coon, J. J., & Wells, J. A. (2020). Broad and thematic remodeling of the surfaceome and glycoproteome on isogenic cells transformed with driving proliferative oncogenes. Proceedings of the National Academy of Sciences of the United States of America, 117 (14), 7764–7775. https://doi.org/10.1073/pnas.1917947117
@@ -21,15 +23,19 @@ General steps for processing skyline output data
 2. save data so you are not re-processing data each time
 3. analyze data
 
-Detailed Instructions/Example
+Detailed instructions/example
 1. Add Skyline output data and parameter file to "Master" folder. Detailed information on the parameter file can be found below. In this example, the CD4+ hypoxia data in Figure 5 will be analyzed. The Skyline output data are contained in "CD4_Combined_Skyline_Output.csv". Note that data from both PNGase and tryptic fractions has been added. The parameter file in this example is "parameter_CD4.csv".
 2. Open "Workflow.R" in RStudio.
 2. Set the working directory to the "Master" folder.
 4. Set source to "./Master/SILAC_Script/SILAC_v2.R".
-5. Set "input" to the name of the Skyline output file (e.g. "CD4_Combined_Skyline_Output.csv").
+5. Set "input" to the name of the Skyline export file (e.g. "CD4_Combined_Skyline_Export.csv").
 6. Set "para" to the name of the parameter file (e.g. "parameter_CD4.csv").
 7. Input desired name for output .csv file (e.g. "Script_Output_CD4.csv").
-8. Set desired volcano plot properties. Default is all protein labels (custom = "", customlab = "normal"). If you would like to label a specific protein, change inputs to include protein names of interest (custom = "custom', customlab = "IL18RA", "CD70")
+8. Set desired volcano plot labeling properties. Default is all protein labels: custom = "", customlab = "normal". If you would like to label a specific protein, change inputs to include protein names of interest: custom = c("IL18R1", "CD70"), customlab = "custom". If you would like no protein labels: custom = "none", customlab = "custom".
+9. Set log2(fold-change) cutoff. For 1.5 fold up- or downregulation, use r.cutoff = 0.58. Can increase or decrease stringency.
+11. Execute each line sequentially. Plots will be generated within seconds as described below.
+12. Export plots and the output .csv file will be deposited in the working directory (e.g. "Master") for further analysis.
+
 
 Detailed info on how calRatio works.
 
@@ -73,6 +79,12 @@ Parameter file fields
 - "center” - T/F normalize to mean, typically T 
 - “sd” - T/F normalize to sd, typically F         
 - "peptides”  - minimum number of well quantified peptides (calculated by dotp) needed to be used to calculate the protein log2 ratio, 2 + for tryptic fraction, 1 + for PNGase 
+
+Output Plots
+1. log2dist - distribution of heavy and light peptides in each experiment.
+2. HLpro - correlations of protein ratios between experiments
+3. HLpep - correlations of peptide ratios between experiments
+4. Volplot - Volcano plot with default significance threshold of P<0.05
 
 
 ```
