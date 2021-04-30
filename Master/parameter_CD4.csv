@@ -1,0 +1,13 @@
+raw,exp_name,used,fraction,exp_label,exp_ref,cell,user,project,dotp,dotp.fil,center,sd,peptides
+Q20181008-06.raw,D1-4-PNG,T,PNG,H,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,1
+Q20181008-10.raw,D1-4-TRY,T,tryp,H,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,2
+Q20181029-03.raw,D1-4-PNG,T,PNG,L,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,1
+Q20181029-07.raw,D1-4-TRY,T,tryp,L,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,2
+Q20181207-03.raw,D2-4-PNG,T,PNG,H,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,1
+Q20181207-13.raw,D2-4-TRY,T,tryp,H,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,2
+Q20181207-07.raw,D2-4-PNG,T,PNG,L,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,1
+Q20181207-17.raw,D2-4-TRY,T,tryp,L,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,2
+Q20190603-03.raw,D3-4-PNG,T,PNG,L,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,1
+Q20190603-11.raw,D3-4-TRY,T,tryp,L,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,2
+Q20190603-05.raw,D3-4-PNG,T,PNG,H,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,1
+Q20190603-13.raw,D3-4-TRY,T,tryp,H,CD4,CD4,jbyrnes,TCH,0.8,OR,T,F,2
