@@ -9,6 +9,12 @@ Wei, J., Leung, K., Truillet, C., Ruggero, D., Wells, J. A., & Evans, M. J. (202
 
 Leung KK, Nguyen A, Shi T, Tang L, Ni X, Escoubet L, MacBeth KJ, DiMartino J, Wells JA. Multiomics of azacitidine-treated AML cells reveals variable and convergent targets that remodel the cell-surface proteome.  Proc Natl Acad Sci U S A. 2019 Jan 8;116(2):695-700. doi: 10.1073/pnas.1813666116. Epub 2018 Dec 24. 10.1073/pnas.1813666116
 
+System requirements
+1. System capable of running R (tested with v3.5.1) and RStudio (tested with v1.1.456) if desired. No non-standard hardware is required.
+
+Installation instructions
+1. To install, download 
+
 # General instructions
 General steps for processing skyline data using the skyline_database.skyr
 1. process data using CalRatio function, (need skyline export file, parameter file, SILAC_v2.R file)
