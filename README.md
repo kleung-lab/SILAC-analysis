@@ -15,15 +15,12 @@ System requirements
 1. System capable of running R (tested with v3.5.1) and RStudio (tested with v1.1.456). No non-standard hardware is required.
 
 Installation instructions
-1. To install, download "Master" folder. Install time should be minimal.
+1. To install, use the Code button dropdown to download a zipped SILAC-analysis-T_Cell_Surfaceome folder. Install time should be minimal.
 
-# General instructions
-General steps for processing skyline output data
-1. process data using CalRatio function, (need skyline export file, parameter file, SILAC_v2.R file), Use skyline_database.skyr as template for Skyline export.
-2. save data so you are not re-processing data each time
-3. analyze data
+# Using SILAC-Analysis
 
 Detailed instructions/example
+
 1. Add Skyline output data and parameter file to "Master" folder. Detailed information on the parameter file can be found below. In this example, the CD4+ hypoxia data in Figure 5 will be analyzed. The Skyline output data are contained in "CD4_Combined_Skyline_Output.csv". Note that data from both PNGase and tryptic fractions has been added. The parameter file in this example is "parameter_CD4.csv".
 2. Open "Workflow.R" in RStudio.
 2. Set the working directory to the "Master" folder.
@@ -65,6 +62,7 @@ calRatio function in SILAC_v2.R
     3.	 parameter
 
 Parameter file fields
+
 - "raw"- raw file name, has to match exactly to the “file name” from skyline report 
 - "exp_name" - a unique name for each experiment, typically contain a identifier, H/L, a number for replicate, PNG/tryptic 
 - "used" - T/F for analyzing, can easily use this to exclude datasets from being processed/analyzed without deleting records of the experiments, usually used to exclude replicate datasets that looks funny and have been repeated 
@@ -81,6 +79,7 @@ Parameter file fields
 - "peptides”  - minimum number of well quantified peptides (calculated by dotp) needed to be used to calculate the protein log2 ratio, 2 + for tryptic fraction, 1 + for PNGase 
 
 Output Plots
+
 1. log2dist - distribution of heavy and light peptides in each experiment.
 2. HLpro - correlations of protein ratios between experiments
 3. HLpep - correlations of peptide ratios between experiments
