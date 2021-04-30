@@ -10,18 +10,28 @@ Wei, J., Leung, K., Truillet, C., Ruggero, D., Wells, J. A., & Evans, M. J. (202
 Leung KK, Nguyen A, Shi T, Tang L, Ni X, Escoubet L, MacBeth KJ, DiMartino J, Wells JA. Multiomics of azacitidine-treated AML cells reveals variable and convergent targets that remodel the cell-surface proteome.  Proc Natl Acad Sci U S A. 2019 Jan 8;116(2):695-700. doi: 10.1073/pnas.1813666116. Epub 2018 Dec 24. 10.1073/pnas.1813666116
 
 System requirements
-1. System capable of running R (tested with v3.5.1) and RStudio (tested with v1.1.456) if desired. No non-standard hardware is required.
+1. System capable of running R (tested with v3.5.1) and RStudio (tested with v1.1.456). No non-standard hardware is required.
 
 Installation instructions
-1. To install, download 
+1. To install, download "Master" folder. Install time should be minimal.
 
 # General instructions
-General steps for processing skyline data using the skyline_database.skyr
+General steps for processing skyline output data
 1. process data using CalRatio function, (need skyline export file, parameter file, SILAC_v2.R file)
 2. save data so you are not re-processing data each time
 3. analyze data
 
-Detailed info on how calRatio works. Worthwhile to read through
+Detailed Instructions/Example
+1. Add Skyline output data and parameter file to "Master" folder. Detailed information on the parameter file can be found below. In this example, the CD4+ hypoxia data in Figure 5 will be analyzed. The Skyline output data are contained in "CD4_Combined_Skyline_Output.csv". Note that data from both PNGase and tryptic fractions has been added. The parameter file in this example is "parameter_CD4.csv".
+2. Open "Workflow.R" in RStudio.
+2. Set the working directory to the "Master" folder.
+4. Set source to "./Master/SILAC_Script/SILAC_v2.R".
+5. Set "input" to the name of the Skyline output file (e.g. "CD4_Combined_Skyline_Output.csv").
+6. Set "para" to the name of the parameter file (e.g. "parameter_CD4.csv").
+7. Input desired name for output .csv file (e.g. "Script_Output_CD4.csv").
+8. Set desired volcano plot properties. Default is no protein labels (custom = "", customlab = "normal"). If you would like to label a specific protein, 
+
+Detailed info on how calRatio works.
 
 calRatio function in SILAC_v2.R
 1.	concatenate skyline files for a given project (put both PNG and tryptic fraction data together, either in skyline or in R using rbind) 
@@ -62,85 +72,8 @@ Parameter file fields
 - "dotp.fil”  - AND/OR determine whether both/either heavy and light idotp has to pass 
 - "center” - T/F normalize to mean, typically T 
 - “sd” - T/F normalize to sd, typically F         
-- "peptides”  - minimum number of well quantified peptides (calculated by dotp) needed to be used to calculate the protein log2 ratio, 5 + for tryptic fraction, 1 + for PNGase 
+- "peptides”  - minimum number of well quantified peptides (calculated by dotp) needed to be used to calculate the protein log2 ratio, 2 + for tryptic fraction, 1 + for PNGase 
 
 
-### step 1. Example usage to process data – 
-`setwd("~/Box Sync/MS/AZA_analysis/") #set directory`
-
-`source("~/Box Sync/MS/codes/SILAC_v2.R") #source functions`
-
-`calRatio3(input = "./skyline_export_v4/", para = "./parameter_AZA_3.csv") #process data`
-
-this will generate 4 R objects 
-- skypep for peptide info
-- skypro for protein info
-- skypro_ind for protein info at replicate level
-- parameter for parameters
-
-
-### step 2. save data
-write.csv will write file to a csv format (don't bother with xls format, very unstable)
-
-`write.csv(skypro, "./AZA_pro.csv")`
-
-save.image will save all the R object as a .Rdata file - this is typcially what I do so that I can go back to the same dataset for analysis
-
-`save.image("~/Box Sync/MS/MSpeaklist/AZA_3_data.Rdata")`
-
-
-### Step 3. analyze data using R notebook - 
-This is the surface proteomics data analysis for TSC project with Mike Evans group
-Charles Trulliet, Loc Huynh, and Junnian Wei
-
-header and document set up used here will help help generate PDF figures and html output from each "chunck" of code when you "knit" the script together
-
-`---
-title: "TSC_analysis"
-output:
-  html_document:
-    fig_height: 6
-    fig_width: 6
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-  html_notebook: default
-editor_options: 
-  chunk_output_type: console
----`
-
-example here looks at TSC dataset
-## document set up
-```{r setup}
-knitr::opts_knit$set(root.dir = "~/Box Sync/MS/MSpeaklist/TSC_v2/")
-knitr::opts_chunk$set(
-    echo = FALSE,
-    message = FALSE,
-    warning = FALSE,
-    fig.align='center',
-    fig.pos='H',
-    fig.path = "TSC.plots.AND.8/",
-    dev = c("png", "pdf"),
-    dpi=500
-)
-```
-
-
-```{r load data}
-load("~/Box Sync/MS/MSpeaklist/TSC_v2/TSC_basal_data_AND_8_original.RData")
-source("~/Box Sync/MS/MSpeaklist/codes/SILAC_v2.R")
-```
-
-```{r log2 dist boxplot}
-log2dist(skypep, style = "box")
-```
-
-```{r SILAC protein replicate comparison}
-HLpro(skypep)
-```
-
-```{r volcano plots}
-Volplot(skypro, customlab = "custom", custom = c("ANPEP", "MME"))
-Volplot(skypro, r.cutoff = 2)
 ```
 
