@@ -29,7 +29,7 @@ Detailed Instructions/Example
 5. Set "input" to the name of the Skyline output file (e.g. "CD4_Combined_Skyline_Output.csv").
 6. Set "para" to the name of the parameter file (e.g. "parameter_CD4.csv").
 7. Input desired name for output .csv file (e.g. "Script_Output_CD4.csv").
-8. Set desired volcano plot properties. Default is no protein labels (custom = "", customlab = "normal"). If you would like to label a specific protein, 
+8. Set desired volcano plot properties. Default is all protein labels (custom = "", customlab = "normal"). If you would like to label a specific protein, change inputs to include protein names of interest (custom = "custom', customlab = "IL18RA", "CD70")
 
 Detailed info on how calRatio works.
 
