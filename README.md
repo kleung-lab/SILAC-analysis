@@ -19,7 +19,7 @@ Installation instructions
 
 # General instructions
 General steps for processing skyline output data
-1. process data using CalRatio function, (need skyline export file, parameter file, SILAC_v2.R file)
+1. process data using CalRatio function, (need skyline export file, parameter file, SILAC_v2.R file), Use skyline_database.skyr as template for Skyline export.
 2. save data so you are not re-processing data each time
 3. analyze data
 
